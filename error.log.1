@@ -1,0 +1,10 @@
+2019-02-16 03:44:33.938 [error] <0.2044.2>@emqttd_protocol:process:290 Client(nmapNRDBODGKZOQHTVHA@205.205.150.9:59473): Cannot SUBSCRIBE [{<<"$SYS/#">>,[{qos,0}]},{<<"#">>,[{qos,0}]}] for ACL Deny
+2019-02-16 08:00:27.542 [error] <0.5014.2>@emqttd_ws:handle_request:73 Unexpected WS Request: GET /
+2019-02-16 08:00:27.654 [error] <0.5015.2>@emqttd_ws:handle_request:73 Unexpected WS Request: GET /
+2019-02-16 11:46:42.054 [error] <0.1487.0> Supervisor 'esockd_connection_sup - <0.1487.0>' had child connection started with mochiweb_http:start_link({emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}) at <0.6949.2> exit with reason no function clause matching emqttd_http:handle_request("/", {mochiweb_request,[{esockd_connection,[#Port<0.61469>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',...]}, 'OPTIONS') line 67 in context connection_crashed
+2019-02-16 11:46:42.056 [error] emulator Error in process <0.6949.2> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.61469>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',"/",{1,0},{0,nil}]},'OPTIONS'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+2019-02-16 17:52:59.415 [error] <0.10356.2> SSL: hello: tls_handshake.erl:191:Fatal error: protocol version
+2019-02-16 17:53:11.305 [error] <0.10363.2>@emqttd_protocol:process:290 Client(nmapJUOLVXQOEFLQJSOX@116.196.123.240:38356): Cannot SUBSCRIBE [{<<"$SYS/#">>,[{qos,0}]},{<<"#">>,[{qos,0}]}] for ACL Deny
+2019-02-16 17:53:43.751 [error] <0.10385.2> SSL: hello: tls_handshake.erl:191:Fatal error: protocol version
+2019-02-16 23:52:43.224 [error] <0.20421.2>@emqttd_http:authorized:142 HTTP Auth failure: username=, reason="User not found"

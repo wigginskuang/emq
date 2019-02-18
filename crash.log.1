@@ -1,0 +1,13 @@
+2019-02-16 11:46:42 =SUPERVISOR REPORT====
+     Supervisor: 'esockd_connection_sup - <0.1487.0>'
+     Context:    connection_crashed
+     Reason:     {function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.61469>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',"/",{1,0},{0,nil}]},'OPTIONS'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+     Offender:   [{pid,<0.6949.2>},{name,connection},{mfargs,{mochiweb_http,start_link,[{emqttd_http,handle_request,[{state,#Fun<emqttd_http.2.90041999>}]}]}}]
+
+2019-02-16 11:46:42 =ERROR REPORT====
+Error in process <0.6949.2> on node 'emq@127.0.0.1' with exit value:
+{function_clause,[{emqttd_http,handle_request,["/",{mochiweb_request,[{esockd_connection,[#Port<0.61469>,#Fun<esockd_transport.2.122912610>,[]]},'OPTIONS',"/",{1,0},{0,nil}]},'OPTIONS'],[{file,"src/emqttd_http.erl"},{line,67}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,93}]}]}
+2019-02-16 17:52:59 =ERROR REPORT====
+SSL: hello: tls_handshake.erl:191:Fatal error: protocol version
+2019-02-16 17:53:43 =ERROR REPORT====
+SSL: hello: tls_handshake.erl:191:Fatal error: protocol version

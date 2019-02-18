@@ -1,0 +1,58 @@
+2019-02-18 09:29:20 =ERROR REPORT====
+** Generic server <0.17064.4> terminating
+** Last message in was {inet_async,#Port<0.98689>,18260,{ok,<<0,1,0,12,47,67,111,110,115,117,109,112,116,105,111,110,0>>}}
+** When Server state == {client_state,{esockd_connection,[#Port<0.98689>,#Fun<esockd_transport.2.122912610>,[]]},{{117,48,224,90},49612},running,true,undefined,65536,#Fun<emqttd_parser.3.37423764>,{proto_state,{{117,48,224,90},49612},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17064.4>,true,3,<<"MQIsdp">>,<<"test1">>,false,undefined,10,0.75,1024,<0.17065.4>,{proto_stats,false,0,0,0,0},undefined,undefined,undefined,false,{1550,453355,900279}},{keepalive,#Fun<emqttd_client.17.18944683>,35,8,{keepalive,check},#Ref<0.4239242650.1584922625.234>,0},false,30000,186}
+** Reason for termination == 
+** {function_clause,[{emqttd_protocol,process,[{mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,0}]},undefined},{proto_state,{{117,48,224,90},49612},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17064.4>,true,3,<<"MQIsdp">>,<<"test1">>,false,undefined,10,0.75,1024,<0.17065.4>,{proto_stats,false,0,0,0,0},undefined,undefined,undefined,false,{1550,453355,900279}}],[{file,"src/emqttd_protocol.erl"},{line,191}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,324}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,257}]}]}
+2019-02-18 09:29:20 =CRASH REPORT====
+  crasher:
+    initial call: emqttd_client:init/1
+    pid: <0.17064.4>
+    registered_name: []
+    exception exit: {{function_clause,[{emqttd_protocol,process,[{mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,0}]},undefined},{proto_state,{{117,48,224,90},49612},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17064.4>,true,3,<<"MQIsdp">>,<<"test1">>,false,undefined,10,0.75,1024,<0.17065.4>,{proto_stats,false,0,0,0,0},undefined,undefined,undefined,false,{1550,453355,900279}}],[{file,"src/emqttd_protocol.erl"},{line,191}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,324}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,257}]}]},[{gen_server2,terminate,3,[{file,"src/gen_server2.erl"},{line,1157}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,257}]}]}
+    ancestors: [<0.1431.0>,<0.1430.0>,esockd_sup,<0.1203.0>]
+    message_queue_len: 1
+    messages: [{inet_async,#Port<0.98689>,18261,{error,closed}}]
+    links: [<0.1431.0>,<0.17065.4>]
+    dictionary: [{rand_seed,{#{jump => #Fun<rand.16.15449617>,max => 288230376151711743,next => #Fun<rand.15.15449617>,type => exsplus},[155943099319506235|247435161706596194]}},{guid,{1550453360417746,121483217093288,1}}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 2499
+  neighbours:
+2019-02-18 09:29:20 =SUPERVISOR REPORT====
+     Supervisor: 'esockd_connection_sup - <0.1431.0>'
+     Context:    connection_crashed
+     Reason:     {function_clause,[{emqttd_protocol,process,[{mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,0}]},undefined},{proto_state,{{117,48,224,90},49612},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17064.4>,true,3,<<"MQIsdp">>,<<"test1">>,false,undefined,10,0.75,1024,<0.17065.4>,{proto_stats,false,0,0,0,0},undefined,undefined,undefined,false,{1550,453355,900279}}],[{file,"src/emqttd_protocol.erl"},{line,191}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,324}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,wake_up,3,[{file,"proc_lib.erl"},{line,257}]}]}
+     Offender:   [{pid,<0.17064.4>},{name,connection},{mfargs,{emqttd_client,start_link,[[{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,1024},{max_packet_size,65536},{keepalive_backoff,0.75}]]}}]
+
+2019-02-18 09:34:07 =ERROR REPORT====
+** Generic server <0.17113.4> terminating
+** Last message in was {inet_async,#Port<0.98797>,18328,{ok,<<0,1,0,12,47,67,111,110,115,117,109,112,116,105,111,110,0>>}}
+** When Server state == {client_state,{esockd_connection,[#Port<0.98797>,#Fun<esockd_transport.2.122912610>,[]]},{{117,48,224,90},49660},running,true,undefined,65536,#Fun<emqttd_parser.3.37423764>,{proto_state,{{117,48,224,90},49660},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17113.4>,true,3,<<"MQIsdp">>,<<"test1">>,false,undefined,10,0.75,1024,<0.17114.4>,{proto_stats,false,0,0,0,0},undefined,undefined,undefined,false,{1550,453643,674673}},{keepalive,#Fun<emqttd_client.17.18944683>,35,8,{keepalive,check},#Ref<0.4239242650.1584922625.4659>,0},false,30000,171}
+** Reason for termination == 
+** {function_clause,[{emqttd_protocol,process,[{mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,0}]},undefined},{proto_state,{{117,48,224,90},49660},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17113.4>,true,3,<<"MQIsdp">>,<<"test1">>,false,undefined,10,0.75,1024,<0.17114.4>,{proto_stats,false,0,0,0,0},undefined,undefined,undefined,false,{1550,453643,674673}}],[{file,"src/emqttd_protocol.erl"},{line,191}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,324}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]}
+2019-02-18 09:34:07 =CRASH REPORT====
+  crasher:
+    initial call: emqttd_client:init/1
+    pid: <0.17113.4>
+    registered_name: []
+    exception exit: {{function_clause,[{emqttd_protocol,process,[{mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,0}]},undefined},{proto_state,{{117,48,224,90},49660},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17113.4>,true,3,<<"MQIsdp">>,<<"test1">>,false,undefined,10,0.75,1024,<0.17114.4>,{proto_stats,false,0,0,0,0},undefined,undefined,undefined,false,{1550,453643,674673}}],[{file,"src/emqttd_protocol.erl"},{line,191}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,324}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]},[{gen_server2,terminate,3,[{file,"src/gen_server2.erl"},{line,1157}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]}
+    ancestors: [<0.1431.0>,<0.1430.0>,esockd_sup,<0.1203.0>]
+    message_queue_len: 1
+    messages: [{inet_async,#Port<0.98797>,18329,{error,closed}}]
+    links: [<0.1431.0>,<0.17114.4>]
+    dictionary: [{rand_seed,{#{jump => #Fun<rand.16.15449617>,max => 288230376151711743,next => #Fun<rand.15.15449617>,type => exsplus},[237143277829496704|283800607919545466]}},{guid,{1550453647134583,121483217093337,1}}]
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 27
+    reductions: 2306
+  neighbours:
+2019-02-18 09:34:07 =SUPERVISOR REPORT====
+     Supervisor: 'esockd_connection_sup - <0.1431.0>'
+     Context:    connection_crashed
+     Reason:     {function_clause,[{emqttd_protocol,process,[{mqtt_packet,{mqtt_packet_header,8,false,2,false},{mqtt_packet_subscribe,1,[{<<"/Consumption">>,0}]},undefined},{proto_state,{{117,48,224,90},49660},#Fun<emqttd_client.0.18944683>,true,<<"6067">>,<0.17113.4>,true,3,<<"MQIsdp">>,<<"test1">>,false,undefined,10,0.75,1024,<0.17114.4>,{proto_stats,false,0,0,0,0},undefined,undefined,undefined,false,{1550,453643,674673}}],[{file,"src/emqttd_protocol.erl"},{line,191}]},{emqttd_client,received,2,[{file,"src/emqttd_client.erl"},{line,324}]},{gen_server2,handle_msg,2,[{file,"src/gen_server2.erl"},{line,1046}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,247}]}]}
+     Offender:   [{pid,<0.17113.4>},{name,connection},{mfargs,{emqttd_client,start_link,[[{max_publish_rate,0},{client_idle_timeout,30000},{client_enable_stats,false},{max_clientid_len,1024},{max_packet_size,65536},{keepalive_backoff,0.75}]]}}]
+
